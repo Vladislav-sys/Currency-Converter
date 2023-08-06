@@ -32,7 +32,7 @@ const input = document.querySelector(".converter-input");
 const text1 = document.getElementById("select-1").querySelector(".select-text");
 const text2 = document.getElementById("select-2").querySelector(".select-text");
 const result = document.querySelector(".converter-result");
-const url = "http://data.fixer.io/api/latest?access_key=4cc57baea3b9cabed0f4bb7e337932d3&symbols=USD,EUR,GBP,AUD,CAD,INR,CNY,TRY,RUB";
+const url = "https://open.er-api.com/v6/latest/USD";
 function updateMap() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
