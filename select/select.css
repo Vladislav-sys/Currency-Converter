@@ -1,0 +1,117 @@
+
+.select-container, .select-container * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.select-container {
+    font-size: 18px;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid rgba(77, 77, 77, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    position: relative;
+    background-color: #fff;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.select-img {
+    width: 30px;
+    height: 30px;
+}
+
+.select-container.open .select-img {
+    transform: rotate(180deg);
+}
+
+.block {
+    height : 300px;
+}
+
+.select-wrap {
+    visibility: hidden;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all linear .2s;
+    list-style: none;
+    position: absolute;
+    top: 115%;
+    left:0%;
+    z-index: 10;
+    width: 100%;
+    overflow-y: scroll;
+    border: 1px solid rgba(77, 77, 77, 0.3);
+    border-radius: 7px;
+    box-shadow: 7px 7px 8px rgba(118, 118, 118, 0.2);
+    background-color: #fff;
+}
+
+.select-container.open .select-wrap {
+    visibility:visible;
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+@media (min-width:992px) {
+    .select-item:hover {
+        background-color: rgb(226, 226, 226);
+    }
+
+    .select-container.drag .select-item:hover {
+        background-color: #fff;
+    }
+    
+    .select-container.drag  .select-span:hover  {
+        transform: translateX(10px);
+    }
+    
+}
+
+.select-item {
+    height: 60px;
+    padding:10px 15px; 
+    display: flex;
+    align-items: center;
+    transition: background-color linear .3s;
+}
+
+
+.select-item.active {
+    background-color: rgb(246, 212, 190);
+}
+
+
+.select-item:not(:first-child) {
+    border-top: 1px solid rgba(77, 77, 77, 0.3);
+}
+
+body.grab {
+    cursor: grab;
+}
+
+body.grab .select-container{
+    cursor:inherit;
+}
+
+.select-container.drag  .select-span{
+    transition: transform linear .15s;
+}
+
+.select-container.drag .select-item.active {
+    background-color: rgb(246, 212, 190);
+}
+

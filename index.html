@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:regular" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.9.2/css/flag-icons.min.css"/>
+    <link rel="stylesheet" href="select/select.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="converter-wrap">
+            <h1 class="converter-title">currency converter</h1>
+            <label for = "amount" class="converter-label">Enter Amount</label>
+            <input id = "amount" type="text" class="converter-input">
+
+            <div class="converter-selects">
+                <div class="converter-col">
+                    <label class="converter-label">From</label>
+                    <div class="converter-select" id="select-1"></div>
+                </div>
+
+                <button type="button" class="converter-swap-btn">
+                    <img src="icons/arrow.svg" alt="arrow-left">
+                    <img src="icons/arrow.svg" alt="arrow-right">
+                </button>
+
+                <div class="converter-col">
+                    <label class="converter-label">To</label>
+                    <div class="converter-select" id="select-2"></div>
+                </div>
+            </div>
+
+            <div class="converter-result"></div>
+            <button class="converter-btn" type="button">get exchange rate</button>
+        </div>
+
+    </div>
+
+    <script src="select/index.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

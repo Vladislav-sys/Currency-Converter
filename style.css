@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #6759f6;
+}
+
+.container {
+    min-height:100vh;
+    display: flex;
+    padding:15px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.converter-wrap {
+    background-color: #fff;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 50px 35px;
+    font-size: 20px;
+}
+
+.converter-title {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.converter-title + .converter-label {
+    margin-top: 60px;
+    display: inline-block;
+}
+
+.converter-input {
+    display: block;
+    margin-top: 7px;
+    border:2px solid rgba(78, 78, 78, 0.5);
+    outline: none;
+    padding:10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.converter-input:focus {
+    border-color : #6759f6;
+}
+
+.converter-selects {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.converter-col {
+    width: 37%;
+}
+
+.converter-select {
+    margin-top: 10px;
+}
+
+.converter-swap-btn {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0px 10px;
+    margin-top: 35px;
+}
+
+.converter-swap-btn img {
+    width: 30px;
+    transition: transform linear .3s;
+}
+
+.converter-swap-btn img:last-child {
+    margin-top: -15px;
+    transform: rotate(180deg);
+}
+
+.converter-result {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.converter-btn {
+    margin-top: 40px;
+    background-color: #6759f6;
+    width: 100%;
+    padding:20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color:#fff;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    transition: background-color linear .3s;
+}
+
+@media (min-width: 992px) {
+    
+    .converter-swap-btn:hover img:first-child {
+        transform: translateX(-10px);
+    }
+    .converter-swap-btn:hover img:last-child{
+        transform: translateX(10px) rotate(180deg);
+    }
+
+    .converter-btn:hover {
+        background-color: #4439bd
+    }
+} 
+
+/* select overwriting*/
+
+.select-container .fi {
+    font-size: 23px;
+}
+
+
+@media (max-width: 550px) {
+
+    .converter-wrap {
+        padding: 30px 20px;
+        font-size: 18px;
+    }
+
+    .converter-title {
+        font-size: 28px;
+    }
+
+    .converter-selects {
+        flex-direction: column;
+        
+    }
+
+    .select-container {
+        max-width: none;
+        width: 100%;
+    }
+    .converter-col {
+        width: 100%;
+    }
+
+    .converter-swap-btn {
+        transform: rotate(90deg);
+    }
+
+    .converter-result {
+        font-size: 22px;
+    }
+} 
+
+
+@media (max-width: 450px) {
+    
+    .converter-title {
+        font-size: 25px;
+    }
+
+    .converter-wrap {
+        padding: 25px 15px;
+    }
+
+}
