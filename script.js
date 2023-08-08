@@ -21,8 +21,8 @@ let mp = {
     TRY: 29.701773,
     RUB: 105.700974,
 };
-if (localStorage.getItem("timestamp") !== undefined)
-    mp = JSON.parse(localStorage.getItem("mp"));
+
+
 function convert(from, to, amount) {
     return Math.round(amount / mp[from] * mp[to] * 1000) / 1000;
 }
@@ -36,13 +36,9 @@ const url = "https://open.er-api.com/v6/latest/USD";
 function updateMap() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            if (Boolean(localStorage.getItem("timestamp")) && Date.now() + (60 * 60 * 1000) > Number(localStorage.getItem("timestamp")))
-                return;
             const res = yield fetch(url);
             const data = yield res.json();
             mp = data.rates;
-            localStorage.setItem("timestamp", Date.now().toString());
-            localStorage.setItem("mp", JSON.stringify(mp));
         }
         catch (e) {
             console.log(e);
@@ -57,7 +53,7 @@ swapBtn.addEventListener("click", function () {
 function setExchange() {
     return __awaiter(this, void 0, void 0, function* () {
         exchangeBtn.disabled = true;
-        result.textContent = "Loading...";
+        result.textContent = "Calculating...";
         yield updateMap();
         exchangeBtn.disabled = false;
         const c1 = text1.textContent;
